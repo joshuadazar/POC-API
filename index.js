@@ -18,7 +18,13 @@ app.get('/', (req,res)=> {
 
 app.post('/mi-endpoint', (req, res) => {
   console.log(req.body); // imprime lo que se envió en la petición
-  res.status(200).json({ message: 'Message received from  Nexton API' });
+  res.status(200).json({ 
+    message: 'Message received from  Nexton API',
+    ok: true, // indica que la operación fue exitosa
+    status: 'success',
+    data: req.body, // devolver el cuerpo de la petición como datos de la respuesta
+    message: 'Datos recibidos correctamente'
+  });
 });
 
 app.listen(3000, () => {
