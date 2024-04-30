@@ -12,9 +12,13 @@ app.use(cors({
   origin: 'https://www.clinicanaturlich.com'
 }));
 
+app.get('/', (req,res)=> {
+  res.send('value received to post use this path after url: /mi-endpoint')
+})
+
 app.post('/mi-endpoint', (req, res) => {
   console.log(req.body); // imprime lo que se envió en la petición
-  res.status(200).send('Recibido');
+  res.status(200).json({ message: 'Message received from  Nexton API' });
 });
 
 app.listen(3000, () => {
