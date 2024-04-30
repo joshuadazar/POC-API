@@ -4,12 +4,12 @@ const { resolve } = require('path');
 const cors = require('cors');
 
 const app = express();
-const port = 3010;
+
 
 app.use(express.json()); // para poder parsear JSON
 
 app.use(cors({
-  origin: 'https://www.clinicanaturlich.com/'
+  origin: 'https://www.clinicanaturlich.com'
 }));
 
 app.post('/mi-endpoint', (req, res) => {
